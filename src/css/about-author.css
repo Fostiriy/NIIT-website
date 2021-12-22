@@ -1,0 +1,18 @@
+.content {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+abbr {
+    cursor: help;
+}
+
+blockquote {
+    font-size: 32px;
+}
+
+.avatar {
+    width: 300px;
+}
+

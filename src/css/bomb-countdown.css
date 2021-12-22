@@ -1,0 +1,50 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer {
+    font-size: 64px;
+}
+
+.null-point {
+    color: var(--extra-color);
+}
+
+.milliseconds {
+    font-size: 36px;
+}
+
+.button {
+    align-self: center;
+    padding: 10px 20px;
+    margin: 10px;
+    color: var(--text-color);
+    border-radius: 8px;
+    border: none;
+    font-family: Lato, Arial, sans-serif;
+    font-size: 18px;
+}
+
+.start-button {
+    background-color: var(--contrast-color);
+}
+
+.start-button:hover {
+    background-color: var(--select-color);
+    cursor: pointer;
+}
+
+.stop-button {
+    background-color: transparent;
+}
+
+.stop-button:hover {
+    cursor: pointer;
+}
+
+.inactive {
+    display: none;
+}

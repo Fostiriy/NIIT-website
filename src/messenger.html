@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Мессенджер</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/messenger.css">
+    <link rel="icon"
+          href="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-message-contact-flatart-icons-outline-flatarticons.png">
+</head>
+<body>
+//= template/header.html
+
+<div class="messenger">
+    <div class="content">
+
+        <div class="users-block">
+            <section class="user">
+                <div class="user-avatar"></div>
+                <div class="user-name">
+                    Заметки
+                </div>
+            </section>
+            <!-- /.user -->
+
+            <section class="user">
+                <div class="user-avatar">
+                    <img class="user-avatar-img" src="img/magic-bot.png" alt="Магический шар">
+                </div>
+                <div class="user-name">
+                    Магический шар 8 (разрабатывается)
+                </div>
+            </section>
+            <!-- /.user -->
+        </div>
+        <!-- /.users-block -->
+
+        <div class="chat-block">
+            <div class="messages-block">
+                <!-- Здесь будут вводимые сообщения -->
+            </div>
+            <div class="input-block">
+                <textarea class="input-area" id="input-area-1" name="send-message" placeholder="Сообщение"></textarea>
+                <button class="send-button" id="send-button-1" type="button" onclick="onSendButtonClick">
+                    Отправить
+                </button>
+            </div>
+            <!-- /.input-block -->
+        </div>
+        <!-- /.chat-block -->
+    </div>
+    <!-- /.content -->
+</div>
+<!-- /.messenger -->
+
+<template id="new-message">
+    <div class="message-wrapper sent-message">
+        <div class="message">
+            <div class="message-header">
+                <span class="message-author"></span>
+                <span class="message-time"></span>
+            </div>
+            <!-- /.message-header -->
+            <div class="message-text"></div>
+        </div>
+    </div>
+</template>
+
+<script src="js/messenger.js"></script>
+</body>
+</html>
