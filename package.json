@@ -1,0 +1,23 @@
+{
+  "name": "niit-website",
+  "version": "1.0.0",
+  "description": "study final project website",
+  "main": "gulpfile.js",
+  "type": "module",
+  "scripts": {
+    "build": "gulp build"
+  },
+  "keywords": [],
+  "author": "fostiriy",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fostiriy/NIIT-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Fostiriy/NIIT-website/issues"
+  },
+  "homepage": "https://github.com/Fostiriy/NIIT-website#readme",
+  "devDependencies": {
+  }
+}
