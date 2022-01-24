@@ -7,17 +7,16 @@ const srcFolder = './src';
 
 export const path = {
     build: {
-        files: `${buildFolder}/files/`,
+        html: `${buildFolder}/`,
+        files: `${buildFolder}/files/`
     },
     src: {
-        files: `${srcFolder}/files/**/*.*`, //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
+        html: `${srcFolder}/*.html`,
+        files: `${srcFolder}/files/**/*.*`
     },
-    watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
-        html: 'src/**/*.html',
-        js: 'src/js/**/*.js',
-        css: 'src/css/**/*.css',
-        img: 'src/img/**/*.*',
-        fonts: 'src/fonts/**/*.*'
+    watch: {
+        html: `${srcFolder}/**/*.html`,
+        files: `${srcFolder}/files/**/*.*`
     },
     clean: buildFolder,
     buildFolder: buildFolder,

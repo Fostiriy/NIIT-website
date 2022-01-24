@@ -19,5 +19,11 @@
   },
   "homepage": "https://github.com/Fostiriy/NIIT-website#readme",
   "devDependencies": {
+    "del": "^6.0.0"
+  },
+  "dependencies": {
+    "browser-sync": "^2.27.7",
+    "gulp": "^4.0.2",
+    "gulp-rigger": "^0.5.8"
   }
 }
