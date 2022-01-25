@@ -8,7 +8,7 @@
     <link rel="icon" href="img/icon.png">
 </head>
 <body>
-//= template/header.html
+@@include('html/header.html',{})
 
 <div class="content">
     <div class="game-info">
@@ -38,7 +38,7 @@
 </div>
 <!-- /.content -->
 
-//= template/footer.html
+@@include('html/footer.html',{})
 
 <script src="js/refrigerator-game.js" type="module"></script>
 

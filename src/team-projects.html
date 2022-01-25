@@ -8,7 +8,7 @@
     <link rel="icon" href="img/icon.png">
 </head>
 <body>
-//= template/header.html
+@@include('html/header.html',{})
 
 <div class="content">
     <p class="team">Данные работы были сделаны во время изучения дисциплины "Основы визуального программирования" на
@@ -39,7 +39,7 @@
 </div>
 <!-- /.content -->
 
-//= template/footer.html
+@@include('html/footer.html',{})
 
 <script src="js/index.js"></script>
 
