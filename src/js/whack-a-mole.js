@@ -1,6 +1,4 @@
 import {startGame} from '/src/js/gameTableMethods.js';
-import '/src/css/index.css';
-import '/src/css/game-table.css';
 
 let rows;
 let cols;

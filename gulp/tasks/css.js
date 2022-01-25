@@ -18,7 +18,7 @@ export const css = () => {
             cascade: true
         }))
         // Раскомментировать, если нужен несжатый дубль файла стилей
-        .pipe(app.gulp.dest(app.path.build.css))
+        // .pipe(app.gulp.dest(app.path.build.css))
         .pipe(cleanCss())
         .pipe(rename({
             extname: ".min.css"
