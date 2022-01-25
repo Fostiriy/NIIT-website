@@ -6,20 +6,38 @@ import groupCssMediaQueries from 'gulp-group-css-media-queries'; // группи
 
 
 export const css = () => {
-    return app.gulp.src(app.path.src.css, { sourcemap: true })
-        .pipe(groupCssMediaQueries())
-        .pipe(webpcss({
-            webpClass: ".webp",
-            noWebpClass: ".no-webp"
-        }))
-        .pipe(autoprefixer({
-            grid: true,
-            overrideBrowserslist: ["last 3 versions"],
-            cascade: true
-        }))
-        // Раскомментировать, если нужен несжатый дубль файла стилей
-        // .pipe(app.gulp.dest(app.path.build.css))
-        .pipe(cleanCss())
+    return app.gulp.src(app.path.src.css, { sourcemaps: app.isDev })
+        .pipe(
+            app.plugins.if(
+                app.isBuild,
+                groupCssMediaQueries()
+            )
+        )
+        .pipe(
+            app.plugins.if(
+                app.isBuild,
+                webpcss({
+                    webpClass: ".webp",
+                    noWebpClass: ".no-webp"
+                })
+            )
+        )
+        .pipe(
+            app.plugins.if(
+                app.isBuild,
+                autoprefixer({
+                    grid: true,
+                    overrideBrowserslist: ["last 3 versions"],
+                    cascade: true
+                })
+            )
+        )
+        .pipe(
+            app.plugins.if(
+                app.isBuild,
+                cleanCss()
+            )
+        )
         .pipe(rename({
             extname: ".min.css"
         }))

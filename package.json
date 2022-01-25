@@ -5,7 +5,8 @@
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
-    "dev": "gulp"
+    "dev": "gulp",
+    "build": "gulp build --build"
   },
   "keywords": [],
   "author": "fostiriy",
@@ -26,6 +27,7 @@
     "gulp-clean-css": "latest",
     "gulp-file-include": "latest",
     "gulp-group-css-media-queries": "latest",
+    "gulp-if": "^3.0.0",
     "gulp-imagemin": "latest",
     "gulp-newer": "latest",
     "gulp-rename": "latest",
