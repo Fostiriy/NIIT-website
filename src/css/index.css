@@ -116,6 +116,12 @@ a:hover {
 .footer {
     margin-top: auto;
     display: flex;
+    justify-content: space-between;
     padding: 20px 10px 30px;
     border-top: solid var(--contrast-color);
+}
+
+.social-networks img {
+    height: 30px;
+    margin: 0 5px;
 }
