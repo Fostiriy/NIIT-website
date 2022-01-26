@@ -55,6 +55,10 @@ body {
     align-items: center;
 }
 
+.navbar li {
+    display: inline;
+}
+
 .navbar-logo-link {
     height: 100%;
     margin: 0 10px;
@@ -69,6 +73,10 @@ body {
     margin: 10px;
 }
 
+a {
+    color: var(--text-color);
+}
+
 a:hover {
     color: var(--select-color);
 }
@@ -77,6 +85,7 @@ a:hover {
     display: none;
     position: absolute;
     width: max-content;
+    padding: 0;
     background-color: var(--bg-color);
     border: solid var(--contrast-color);
     border-top: none;
@@ -110,4 +119,3 @@ a:hover {
     padding: 20px 10px 30px;
     border-top: solid var(--contrast-color);
 }
-
