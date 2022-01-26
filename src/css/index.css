@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+
 :root {
-    --bg-color: #20202D;
-    --contrast-color: #627BFF;
-    --text-color: #fff;
-    --select-color: #20207D;
-    --extra-color: rgba(255, 255, 255, .5);
-    --font-family: "Lato Light", Arial, sans-serif;
+    --bg-color: #FEFCFB;
+    --contrast-color: #000;
+    --text-color: #000;
+    --select-color: #1282A2;
+    --extra-color: #034078;
+    --font-family-title: 'Lato Light', Arial, sans-serif;
+    --font-family: "Lato Regular", Arial, sans-serif;
+    --font-size-title1: 36px;
+    --font-size-title2: 24px;
+    --font-size-text: 16px;
+    --font-size-text2: 11px;
 }
 
 body, h1, h2, h3, h4, p, a {
@@ -12,6 +19,7 @@ body, h1, h2, h3, h4, p, a {
     padding: 0;
     font-size: 100%;
     font-weight: normal;
+    text-decoration: none;
 }
 
 * {
@@ -19,74 +27,87 @@ body, h1, h2, h3, h4, p, a {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-family);
-    font-size: 20px;
+    font-size: 16px;
     width: 1024px;
     margin: 0 auto;
 }
 
-a {
-    color: var(--contrast-color);
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.title {
-    text-transform: uppercase;
-    font-size: 36px;
-    color: var(--contrast-color);
-    margin-top: 10px;
-    margin-bottom: 10px;
+.header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 40px;
+    display: flex;
+    padding: 5px 0;
+    border-bottom: solid var(--contrast-color);
+    background-color: var(--bg-color);
 }
 
 .navbar {
     display: flex;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    background-color: var(--contrast-color);
-    border-radius: 4px;
+    height: 100%;
+    align-items: center;
+}
+
+.navbar-logo-link {
+    height: 100%;
+    margin: 0 10px;
+}
+
+.navbar-logo {
+    height: 100%;
 }
 
 .nav-link {
-    display: block;
-    padding: 0 20px;
-    line-height: 2rem;
-    text-decoration: none;
-    font-size: 18px;
-    font-family: Lato, Arial, sans-serif;
-    color: var(--text-color);
+    cursor: pointer;
+    margin: 10px;
 }
 
-.nav-link:hover {
-    background-color: var(--select-color);
+a:hover {
+    color: var(--select-color);
 }
 
-.dropdown-list-main,
 .dropdown-list {
     display: none;
     position: absolute;
     width: max-content;
-    background-color: var(--contrast-color);
+    background-color: var(--bg-color);
+    border: solid var(--contrast-color);
+    border-top: none;
 }
 
-.dropdown-list {
-    left: 100%;
-    top: 0;
-}
-
-.dropdown-nav-link:hover > .dropdown-list-main,
 .dropdown-nav-link:hover > .dropdown-list {
-    display: inherit;
+    display: flex;
+    flex-direction: column;
 }
 
-.footer {
-    margin: 100px 0 50px;
-    font-size: 18px;
+.title {
+    font-family: var(--font-family-title);
+    text-transform: uppercase;
+    font-size: 36px;
+    color: var(--select-color);
+    margin: 20px 0 10px;
 }
 
 .team-list {
     list-style: none;
+}
+
+.main {
+    padding: 0 10px;
+    margin: 20px 0;
+}
+
+.footer {
+    margin-top: auto;
+    display: flex;
+    padding: 20px 10px 30px;
+    border-top: solid var(--contrast-color);
 }
 

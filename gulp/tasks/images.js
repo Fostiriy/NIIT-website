@@ -40,7 +40,7 @@ export const images = () => {
             )
         )
         .pipe(app.gulp.dest(app.path.build.img))
-        .pipe(app.gulp.src(app.path.src.img))
+        .pipe(app.gulp.src(app.path.src.svg))
         .pipe(app.gulp.dest(app.path.build.img))
         .pipe(app.plugins.browsersync.stream());
 }

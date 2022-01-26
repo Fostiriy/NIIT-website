@@ -9,5 +9,5 @@ fetch('img/art-station.json').then(response => {
 function pasteImage(source) {
     const image = new Image();
     image.src = source;
-    document.querySelector('.content').append(image);
+    document.querySelector('.about-block').append(image);
 }

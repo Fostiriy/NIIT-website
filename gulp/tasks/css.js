@@ -1,4 +1,4 @@
-import rename from 'gulp-rename';
+import rename from 'gulp-rename'; // переименование итогового файла
 import cleanCss from 'gulp-clean-css'; // сжатие CSS файла
 import webpcss from 'gulp-webpcss'; // вывод WEBP изображений
 import autoprefixer from 'gulp-autoprefixer'; // добавление вендорных префиксов (для кроссбраузерности)

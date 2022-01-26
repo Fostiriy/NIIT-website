@@ -35,7 +35,7 @@ const mainTasks = gulp.parallel(copy, html, css, js, images);
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);
 
-export { dev }
-export { build }
+export { dev };
+export { build };
 
 gulp.task('default', dev);
