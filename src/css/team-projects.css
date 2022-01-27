@@ -1,3 +1,7 @@
+.team-list {
+    padding: 0;
+}
+
 .youtube-block {
     display: flex;
     justify-content: center;

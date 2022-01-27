@@ -4,10 +4,11 @@
     --bg-color: #FEFCFB;
     --contrast-color: #000;
     --text-color: #000;
-    --select-color: #1282A2;
-    --extra-color: #034078;
+    --select-color: #1299c0;
+    --extra-color: #10568d;
     --font-family-title: 'Lato Light', Arial, sans-serif;
     --font-family: "Lato Regular", Arial, sans-serif;
+    --font-size-mega-title: 54px;
     --font-size-title1: 36px;
     --font-size-title2: 24px;
     --font-size-text: 16px;
@@ -24,6 +25,14 @@ body, h1, h2, h3, h4, p, a {
 
 * {
     box-sizing: border-box;
+}
+
+a {
+    color: var(--extra-color);
+}
+
+a:hover {
+    color: var(--select-color);
 }
 
 body {
@@ -73,14 +82,6 @@ body {
     margin: 10px;
 }
 
-a {
-    color: var(--text-color);
-}
-
-a:hover {
-    color: var(--select-color);
-}
-
 .dropdown-list {
     display: none;
     position: absolute;
@@ -124,4 +125,19 @@ a:hover {
 .social-networks img {
     height: 30px;
     margin: 0 5px;
+}
+
+.button {
+    align-self: center;
+    padding: 10px 20px;
+    background: transparent;
+    border: solid 2px var(--contrast-color);
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.button:hover {
+    color: var(--select-color);
+    border: solid 2px var(--select-color);
+    cursor: pointer;
 }

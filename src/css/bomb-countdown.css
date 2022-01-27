@@ -5,8 +5,12 @@
     align-items: center;
 }
 
+.timer-wrapper {
+    font-family: var(--font-family-title);
+}
+
 .timer {
-    font-size: 64px;
+    font-size: var(--font-size-mega-title);
 }
 
 .null-point {
@@ -14,35 +18,7 @@
 }
 
 .milliseconds {
-    font-size: 36px;
-}
-
-.button {
-    align-self: center;
-    padding: 10px 20px;
-    margin: 10px;
-    color: var(--text-color);
-    border-radius: 8px;
-    border: none;
-    font-family: Lato, Arial, sans-serif;
-    font-size: 18px;
-}
-
-.start-button {
-    background-color: var(--contrast-color);
-}
-
-.start-button:hover {
-    background-color: var(--select-color);
-    cursor: pointer;
-}
-
-.stop-button {
-    background-color: transparent;
-}
-
-.stop-button:hover {
-    cursor: pointer;
+    font-size: var(--font-size-title1);
 }
 
 .inactive {

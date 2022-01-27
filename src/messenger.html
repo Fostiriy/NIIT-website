@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Мессенджер</title>
+    <title>Мессенджер – Сайт Буракова Алексея</title>
     <link rel="stylesheet" href="css/index.min.css">
     <link rel="stylesheet" href="css/messenger.min.css">
     <link rel="icon"
@@ -11,9 +11,9 @@
 <body>
 @@include('html/header.html',{})
 
-<div class="messenger">
-    <div class="about-block">
-
+<main class="main">
+    <h1 class="title">Мессенджер</h1>
+    <div class="messenger">
         <div class="users-block">
             <section class="user">
                 <div class="user-avatar"></div>
@@ -41,7 +41,7 @@
             </div>
             <div class="input-block">
                 <textarea class="input-area" id="input-area-1" name="send-message" placeholder="Сообщение"></textarea>
-                <button class="send-button" id="send-button-1" type="button" onclick="onSendButtonClick">
+                <button class="button" id="send-button-1" type="button" onclick="onSendButtonClick">
                     Отправить
                 </button>
             </div>
@@ -49,9 +49,9 @@
         </div>
         <!-- /.chat-block -->
     </div>
-    <!-- /.content -->
-</div>
-<!-- /.messenger -->
+    <!-- /.messenger -->
+</main>
+<!-- /.main -->
 
 <template id="new-message">
     <div class="message-wrapper sent-message">
@@ -66,6 +66,7 @@
     </div>
 </template>
 
+@@include('html/footer.html',{})
 <script src="js/messenger.js"></script>
 </body>
 </html>
