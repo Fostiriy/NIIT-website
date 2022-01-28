@@ -16,7 +16,14 @@ export const path = {
     src: {
         html: `${srcFolder}/*.html`,
         css: `${srcFolder}/css/*.css`,
-        js: `${srcFolder}/js/index.js`,
+        js: {
+            main: `${srcFolder}/js/index.js`,
+            whackAMole: `${srcFolder}/js/whack-a-mole.js`,
+            refrigeratorGame: `${srcFolder}/js/refrigerator-game.js`,
+            messenger: `${srcFolder}/js/messenger.js`,
+            bombCountdown: `${srcFolder}/js/bomb-countdown.js`,
+            aboutAuthor: `${srcFolder}/js/about-author.js`,
+        },
         img: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,ico}`,
         svg: `${srcFolder}/svg/**/*.svg`,
         files: `${srcFolder}/files/**/*.*`
