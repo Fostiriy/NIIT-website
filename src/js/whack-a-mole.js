@@ -55,8 +55,7 @@ function timeoutCounter() {
     clearInterval(timer);
     mole.classList.remove('mole');
     document.querySelector('.congratulation-block').style.display = 'block';
-    let inputs = document.querySelectorAll('.input-area');
-    inputs.forEach(element => element.removeAttribute('disabled'));
+    document.querySelector('.input-block').style.display = 'flex';
 }
 
 function playGame() {

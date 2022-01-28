@@ -27,10 +27,7 @@ function createTable(place, rows, cols, onClick) {
 export function addTable(onClick) {
     let rows = parseInt(document.getElementById('rows').value);
     let cols = parseInt(document.getElementById('cols').value);
-    let inputs = document.querySelectorAll('.input-area');
-    inputs.forEach(element => element.setAttribute('disabled', 'disabled'));
     let place = document.querySelector('.game-table-wrapper');
-    document.querySelector('.error').style.display = 'none';
     createTable(place, rows, cols, onClick);
 }
 
@@ -38,6 +35,8 @@ export function startGame(playGame, onClick) {
     let rows = parseInt(document.getElementById('rows').value);
     let cols = parseInt(document.getElementById('cols').value);
     if (rows > 0 && rows < 10 && cols > 0 && cols < 10) {
+        document.querySelector('.input-block').style.display = 'none';
+        document.querySelector('.error').style.display = 'none';
         document.getElementById('start-game-button').style.display = 'none';
         addTable(onClick, rows, cols);
         playGame();

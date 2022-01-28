@@ -1,4 +1,4 @@
-import {startGame} from '/src/js/gameTableMethods.js';
+import { startGame } from '/src/js/gameTableMethods.js';
 
 let rows;
 let cols;
@@ -48,10 +48,10 @@ function recolorTable(row, col) {
         button = document.getElementById('button-' + row.toString() + i.toString());
         changeStation(button);
     }
+    // условие конца игры
     if (score == rows * cols) {
+        document.querySelector('.input-block').style.display = 'flex';
         document.querySelector('.congratulation-block').style.display = 'block';
-        let inputs = document.querySelectorAll('.input-area');
-        inputs.forEach(element => element.removeAttribute('disabled'));
     }
 }
 

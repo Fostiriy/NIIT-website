@@ -4,7 +4,7 @@
 }
 
 .error {
-    color: pink;
+    color: darkred;
     display: none;
 }
 
@@ -14,22 +14,33 @@
 }
 
 .game-table {
-    margin: 1rem 0;
+    margin: 10px 0;
 }
-
 
 .input-block {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-.input-area {
-    height: 2rem;
-    margin: 1rem 0;
+.input-area-block {
+    align-self: center;
 }
 
-.input-area[disabled] {
-    display: none;
+.input-area {
+    height: 30px;
+    width: 50px;
+    background: transparent;
+    padding: 10px 20px;
+    background: transparent;
+    border: solid 2px var(--contrast-color);
+    border-top-left-radius: 8px;
+    margin: 10px 5px;
+}
+
+.right-area {
+    border-top-left-radius: 0;
+    border-top-right-radius: 8px;
 }
 
 .cell-button {
@@ -52,8 +63,10 @@
 
 .game-timer,
 .game-score,
-.game-description {
-    margin: 1rem 0;
+.game-description,
+.congratulation-text,
+.button {
+    margin: 10px 0;
 }
 
 .button-wrapper {
