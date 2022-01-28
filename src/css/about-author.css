@@ -17,7 +17,7 @@ abbr {
 .card {
     display: inline-block;
     width: 310px;
-    border: solid 5px var(--select-color);
+    border: solid 2px var(--select-color);
     border-bottom-left-radius: 50px;
     border-top-right-radius: 50px;
     padding: 20px 20px 30px;

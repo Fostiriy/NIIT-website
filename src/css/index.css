@@ -128,7 +128,6 @@ body {
 }
 
 .button {
-    align-self: center;
     padding: 10px 20px;
     background: transparent;
     border: solid 2px var(--contrast-color);

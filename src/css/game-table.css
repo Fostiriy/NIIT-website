@@ -30,8 +30,7 @@
 .input-area {
     height: 30px;
     width: 50px;
-    background: transparent;
-    padding: 10px 20px;
+    padding: 5px 10px;
     background: transparent;
     border: solid 2px var(--contrast-color);
     border-top-left-radius: 8px;
