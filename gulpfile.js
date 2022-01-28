@@ -26,7 +26,12 @@ function watcher() {
     gulp.watch(path.watch.files, copy);
     gulp.watch(path.watch.html, html);
     gulp.watch(path.watch.css, css);
-    gulp.watch(path.watch.js, main, messenger, aboutAuthor, bombCountdown, refrigeratorGame, whackAMole);
+    gulp.watch(path.watch.js, main);
+    gulp.watch(path.watch.js, messenger);
+    gulp.watch(path.watch.js, aboutAuthor);
+    gulp.watch(path.watch.js, bombCountdown);
+    gulp.watch(path.watch.js, refrigeratorGame);
+    gulp.watch(path.watch.js, whackAMole);
     gulp.watch(path.watch.img, images);
 }
 

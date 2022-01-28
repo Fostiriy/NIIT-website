@@ -1,4 +1,5 @@
-fetch('img/art-station.json').then(response => {
+fetch('img/art-station.json')
+    .then(response => {
     response.json().then(result => {
         pasteImage(result.card1);
         pasteImage(result.card2);

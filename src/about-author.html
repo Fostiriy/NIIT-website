@@ -4,11 +4,10 @@
 "title": "Об авторе",
 "icon-href": "img/icon.svg",
 "link": '<link rel="stylesheet" href="css/about-author.min.css">',
-"script": '<script src="js/about-author.js"></script>'
+"script": ''
 })
 <body>
 @@include('html/header.html',{})
-
 <main class="main">
     <h1 class="title">Об авторе</h1>
     <section class="about-block">
@@ -22,92 +21,20 @@
     </section>
     <section class="facts-block">
         <h2 class="title">Факты обо мне</h2>
-        <div class = "card">
-            <h3 class = "card-title">Дизайнер</h3>
-            <p>Творчество всегда было где-то рядом со мной, но не занимало важную роль. С начала 2021 года я занимаюсь
-                дизайном в университете. Люблю работать в Figma.</p>
-        </div>
-        <div class = "card">
-            <h3 class = "card-title">Минималист</h3>
-            <p>Люблю порядок, следую минимализму и разумному потреблению. Прочитал книгу "Магическая уборка" и смотрю
-                блогеров-минималистов. Когда-то даже подсчитал количество предметов одежды в своём гардеробе.</p>
-        </div>
-        <div class = "card">
-            <h3 class = "card-title">За экологию</h3>
-            <p>Придерживаюсь экологичного образа жизни с 2019 года: сортирую вторсырьё и хожу в магазин со своими
-                сетками (для овощей, фруктов и прочего).</p>
-        </div>
-        <div class = "card">
-            <h3 class = "card-title">Играю в игры</h3>
-            <p>Играю в компьютерные и настольные игры. На постоянной основе играю в <abbr
-                    title="Heroes of the Storm">HOTS</abbr>.</p>
-        </div>
-        <div class = "card">
-            <h3 class = "card-title">Смотрю сериалы</h3>
-            <p>Люблю сериалы как зарубежные, так и русские. Среди просмотренных "Касл", "Склифосовский",
-                "Я лечу", "Кости", "Папины дочки" и другие.</p>
-        </div>
-        <div class = "card">
-            <h3 class = "card-title">Обожаю мультфильмы и аниме</h3>
-            <p>Из любимого: Рубаки, D Gray man, Финес и Ферб, Смешарики, Бакуман, Тетрадь смерти, Платиновый предел.</p>
-        </div>
-        <div class = "card">
-            <h3 class = "card-title">Кошатник</h3>
-            <p>Кошатник, а ещё нравятся попугаи и собаки, но их у меня не было. Ещё не было.</p>
-        </div>
-        <div class = "card">
-            <h3 class = "card-title">Человек с синдромом отличника</h3>
-            <p>Закончил школу на золотую медаль, сдал ЕГЭ на 278 баллов, учусь на отлично в университете, являюсь
-                старостой группы. НЕ рекомендую, тяжело.</p>
-        </div>
-        <div class = "card">
-            <h3 class = "card-title">Не мыслю жизни без музыки</h3>
-            <p>Постоянно слушаю музыку, если не на улице и не в компании. Слушаю rock, pop, electronic, dance, classic,
-                lo-fi. Ищите меня в
-                <a href="https://www.deezer.com/ru/profile/3091273984" title="Мой профиль в Deezer" target="_blank">Deezer</a>.
-            </p>
-        </div>
-        <div class = "card">
-            <h3 class = "card-title">Миролюбивый</h3>
-            <p>Спокойный, уравновешенный, неконфликтный, но со своим мнением.</p>
-        </div>
-        <div class = "card">
-            <h3 class = "card-title">Живу без пакостей</h3>
-            <p>Не пью, не курю и не парю - за ЗОЖ. Нравится бег и все виды спорта с ракетками.</p>
-        </div>
-        <div class = "card">
-            <h3 class = "card-title">Учил английский</h3>
-            <p>Мой уровень английского B1. Периодически забрасываю совершенствование, порой возвращаюсь к изучению языка.</p>
-        </div>
-        <div class = "card">
-            <h3 class = "card-title">Ярый читатель</h3>
-            <p>Обожаю читать истории из жизни в <a href="https://vk.com/just_str" target="_blank">"Just Story"</a> в ВК.</p>
-        </div>
-        <div class = "card">
-            <h3 class = "card-title">Готовлю вкусное</h3>
-            <p>Нравится готовить в удовольствие. Мой любимый кулинарный канал
-                <a title="Голодный мужчина" href="https://www.youtube.com/c/HungryManFood" target="_blank">"ГМ"</a>.
-            </p>
-        </div>
-        <div class = "card">
-            <h3 class = "card-title">Фанат CarbotAnimation</h3>
-            <p>В восторге от мультфильмов, сделанных <a href="https://www.youtube.com/c/CarbotAnimations" target="_blank">CarbotAnimation</a>.</p>
-        </div>
-        <div class = "card">
-            <h3 class = "card-title">Оптимист</h3>
-            <p>Живу с улыбкой, приношу радость людям, люблю общаться и ходить пешком по красивым местам.</p>
-        </div>
+        <!--Здесь будут карточки фактов обо мне-->
     </section>
 </main>
 
-<template id="new-fact">
-    <div clas="card">
-        <h3 class ="card-title"></h3>
+<template id="new-card">
+    <div class="card">
+        <h3 class="card-title"></h3>
         <p class="card-text"></p>
     </div>
 </template>
 
 @@include('html/footer.html',{})
+
+<script src="js/about-author.js"></script>
 
 </body>
 </html>
