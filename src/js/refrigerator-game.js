@@ -7,8 +7,10 @@ let score = 0;
 let stepsPlace = document.querySelector('.game-score');
 document.getElementById('start-game-button').addEventListener('click', onClickStartGame);
 document.getElementById('repeat-game-button').addEventListener('click', onClickRepeatGame);
+document.getElementById('restart-game-button').addEventListener('click', onClickRepeatGame);
 
 function onClickStartGame() {
+    document.getElementById('restart-game-button').style.display = 'block';
     startGame(playGame, onClick);
 }
 
@@ -17,8 +19,10 @@ function onClickRepeatGame() {
     score = 0;
     document.querySelector('.game-table').remove();
     document.querySelector('.congratulation-block').style.display = 'none';
+    document.getElementById('restart-game-button').style.display = 'none';
     document.getElementById('start-game-button').style.display = 'block';
     stepsPlace.innerText = '';
+    document.getElementById('restart-game-button').style.display = 'block';
     startGame(playGame, onClick);
 }
 
@@ -50,6 +54,7 @@ function recolorTable(row, col) {
     }
     // условие конца игры
     if (score == rows * cols) {
+        document.getElementById('restart-game-button').style.display = 'none';
         document.querySelector('.input-block').style.display = 'flex';
         document.querySelector('.congratulation-block').style.display = 'block';
     }

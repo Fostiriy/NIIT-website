@@ -2,12 +2,8 @@ const inputArea = document.querySelector('#input-area-1');
 const sendButton = document.querySelector('#send-button-1');
 const currentChat = document.querySelectorAll('.user').item(0);
 currentChat.classList.add('active');
-const lineHeight = 37 + 'px';
 
-// Настраиваем объекты при загрузке окна
-// 38px для шрифта кегля 14
 window.onload = function () {
-    inputArea.style.height = lineHeight;
     inputArea.addEventListener('input', onInput);
     sendButton.addEventListener('click', onSendButtonClick);
 };
@@ -16,7 +12,6 @@ window.onload = function () {
 
 // Обработка ввода текста до символа разделителя строки
 function onInput(event) {
-    this.style.height = lineHeight;
     this.style.height = this.scrollHeight + 'px';
     if (event.inputType === 'insertLineBreak') {
         send(event.currentTarget.value.trim());
@@ -34,7 +29,6 @@ function send(value) {
         return;
 
     inputArea.value = '';
-    inputArea.style.height = lineHeight;
 
     insertMessage('Вы', value); // добавляем сообщение в чат
     const chat = document.querySelector('.messages-block');
