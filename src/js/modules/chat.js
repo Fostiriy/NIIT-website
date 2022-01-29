@@ -38,8 +38,8 @@ export function insertMessage(userName, message) {
 export function refreshChat(history) {
     let chat = document.querySelector('.messages-block');
     chat.innerHTML = '';
-    for (let message in history) {
-        insertMessage(message.author, message.message);
+    for (let i = 0; i < history.length; i++) {
+        insertMessage(history[i].author, history[i].message);
     }
 }
 

@@ -11,8 +11,10 @@ window.onload = function () {
         user.addEventListener('click', users.select);
         historiesJson.push(window.localStorage.getItem(`user-${i}`));
         let history = historiesJson[i];
-        if (history !== null)
-            users.loadHistory(i, JSON.parse(history, users.histories[i]));
+        if (history !== "{}" && history !== null)
+            users.loadHistory(i, JSON.parse(history, function(author, message) {
+                return {author, message};
+            }));
         if (window.localStorage.getItem('currentUser') === `user-${i}`)
             users.selectUser(i);
     }
