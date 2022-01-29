@@ -1,13 +1,8 @@
-var requestURL = 'files/about-author.json';
-var request = new XMLHttpRequest();
-
-request.open('GET', requestURL);
-request.responseType = 'json';
-request.send();
-request.onload = function() {
-    var cardsInfo = request.response;
-    insertCards(cardsInfo);
-}
+fetch('files/about-author.json').then(response => {
+    response.json().then(result => {
+        insertCards(result);
+    });
+});
 
 function insertCards(jsonObj) {
     let cards = jsonObj;
@@ -22,17 +17,17 @@ function insertCards(jsonObj) {
     }
 }
 
-// fetch('img/art-station.json')
-//     .then(response => {
-//         response.json().then(result => {
-//             pasteImage(result.card1);
-//             pasteImage(result.card2);
-//             pasteImage(result.card3);
-//         });
-//     });
+// Альтернативный код
+
+// var requestURL = 'files/about-author.json';
+// var request = new XMLHttpRequest();
 //
-// function pasteImage(source) {
-//     const image = new Image();
-//     image.src = source;
-//     document.querySelector('.about-block').append(image);
+// request.open('GET', requestURL);
+// request.responseType = 'json';
+// request.send();
+// request.onload = function() {
+//     var cardsInfo = request.response;
+//     insertCards(cardsInfo);
 // }
+
+

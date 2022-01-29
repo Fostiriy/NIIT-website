@@ -24,7 +24,7 @@ function createTable(place, rows, cols, onClick) {
     place.append(table);
 }
 
-export function addTable(onClick) {
+function addTable(onClick) {
     let rows = parseInt(document.getElementById('rows').value);
     let cols = parseInt(document.getElementById('cols').value);
     let place = document.querySelector('.game-table-wrapper');

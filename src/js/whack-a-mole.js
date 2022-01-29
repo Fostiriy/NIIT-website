@@ -1,9 +1,9 @@
-import {startGame} from '/src/js/gameTableMethods.js';
+import { startGame } from './modules/gameTableFunctions.js';
 
 let rows;
 let cols;
-let score = 0;
-let time = 30;
+let score;
+let time; // время в секундах
 let mole;
 let scorePlace = document.querySelector('.game-score');
 let timerPlace = document.querySelector('.game-timer');
@@ -17,8 +17,6 @@ function onClickStartGame() {
 }
 
 function onClickRepeatGame() {
-    time = 30;
-    score = 0;
     document.querySelector('.game-table').remove();
     document.querySelector('.congratulation-block').style.display = 'none';
     document.getElementById('start-game-button').style.display = 'block';
@@ -27,12 +25,14 @@ function onClickRepeatGame() {
     startGame(playGame, onClick);
 }
 
+// Обработка клика по клетке поля с кротом
 function onClick() {
     if (this.classList.contains('mole'))
         score++;
     scorePlace.innerText = 'Очки: ' + score;
 }
 
+// Перемещение крота
 function moveMole() {
     mole.classList.remove('mole');
     let row = getRandomInt(rows);
@@ -41,16 +41,21 @@ function moveMole() {
     mole.classList.add('mole');
 }
 
+// Случайное число
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
+// Изменение счётчика
 function timeCounter() {
-    timerPlace.innerText = 'Время: ' + time;
     time--;
+    timerPlace.innerText = 'Время: ' + time;
+    if (time == 0)
+        endGame();
 }
 
-function timeoutCounter() {
+// Окончание игры (обнуление счётчика)
+function endGame() {
     clearInterval(moveMoleInterval);
     clearInterval(timer);
     mole.classList.remove('mole');
@@ -58,7 +63,10 @@ function timeoutCounter() {
     document.querySelector('.input-block').style.display = 'flex';
 }
 
+// Генерация начала игры
 function playGame() {
+    time = 10;
+    score = 0;
     rows = parseInt(document.getElementById('rows').value);
     cols = parseInt(document.getElementById('cols').value);
     mole = document.getElementById('button-00');
@@ -66,6 +74,5 @@ function playGame() {
     timerPlace.innerText = 'Время: ' + time;
     timer = setInterval(timeCounter, 1000);
     moveMoleInterval = setInterval(moveMole, 700);
-    setTimeout(timeoutCounter, 32000);
 }
 
