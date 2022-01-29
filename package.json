@@ -13,12 +13,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Fostiriy/NIIT-website.git"
+    "url": "git+https://github.com/Fostiriy/NIT-website.git"
   },
   "bugs": {
-    "url": "https://github.com/Fostiriy/NIIT-website/issues"
+    "url": "https://github.com/Fostiriy/NIT-website/issues"
   },
-  "homepage": "https://github.com/Fostiriy/NIIT-website#readme",
+  "homepage": "https://github.com/Fostiriy/NIT-website#readme",
   "devDependencies": {
     "browser-sync": "latest",
     "del": "latest",
