@@ -27,7 +27,7 @@
     "gulp-clean-css": "latest",
     "gulp-file-include": "latest",
     "gulp-group-css-media-queries": "latest",
-    "gulp-if": "^3.0.0",
+    "gulp-if": "latest",
     "gulp-imagemin": "latest",
     "gulp-newer": "latest",
     "gulp-rename": "latest",
