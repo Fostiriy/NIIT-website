@@ -1,71 +1,38 @@
-export const users = document.querySelectorAll('.user');
-const user1 = users.item(0);
-const user2 = users.item(1);
-let currentUser = user1;
+import { refreshChat } from "./chat.js";
 
-export function selectUser() {
+export const users = document.querySelectorAll('.user');
+export let histories = [];
+for (let i = 0; i < users.length; i++) {
+    histories[i] = [];
+}
+export let currentUserIndex = 0;
+let currentUser = users[currentUserIndex];
+
+export function select() {
     if (currentUser != this) {
         currentUser.classList.remove('active');
         currentUser = this;
-        this.classList.add('active');
-
-        // refreshChat(you.history);
-        // currentUser = you;
-        //
-        // you.htmlFragment.classList.add('active');
-        // bot.htmlFragment.classList.remove('active');
-        //
-        // window.localStorage.setItem('currentUser', 'you');
+        currentUser.classList.add('active');
+        for (let i = 0; i < users.length; i++) {
+            if (users[i] == currentUser) {
+                refreshChat(histories[i]);
+                window.localStorage.setItem('currentUser', `user-${i}`);
+                currentUserIndex = i;
+                break;
+            }
+        }
     }
 }
 
-
-
-let history = [];
-
-function send(author, message) {
-    history.push({ author, message });
-    addMessage(author, message);
-
-    window.localStorage.setItem('youHistory', JSON.stringify(history));
-
-    updateLastMessage({ htmlFragment, history });
+export function selectUser(index) {
+    currentUserIndex = index;
+    currentUser.classList.remove('active');
+    currentUser = users[index];
+    currentUser.classList.add('active');
+    refreshChat(histories[index]);
+    window.localStorage.setItem('currentUser', `user-${index}`);
 }
 
-function loadHistory(_history) {
-    history = _history;
-    updateLastMessage({ htmlFragment, history });
-}
-
-function addMessage(author, message) {
-    const place = document.querySelector('.messages-wrapper');
-    const fragment = document.getElementById('submit-template').content.cloneNode(true);
-
-    fragment.querySelector('.message-author').innerText = author;
-    fragment.querySelector('.message-body').innerText = message;
-
-    if (author !== 'Вы') {
-        fragment.querySelector('.message-wrapper').classList.remove('justify-content-end');
-    }
-
-    place.append(fragment);
-}
-
-function updateLastMessage(user) {
-    if (user.history.length <= 0) return;
-
-    let message = user.history[user.history.length - 1].message;
-
-    if (message.length > 30) {
-        message = message.substr(0, 30) + '...';
-    }
-
-    user.htmlFragment.querySelector('.last-message').innerText = message;
-}
-
-function refreshChat(history) {
-    let chat = document.querySelector('.messages-wrapper');
-
-    chat.innerHTML = '';
-    history.forEach(item => addMessage(item.author, item.message));
+export function loadHistory(index, history) {
+    histories[index] = history;
 }

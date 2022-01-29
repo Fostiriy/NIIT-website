@@ -1,3 +1,5 @@
+import { histories, currentUserIndex } from "./users.js";
+
 export const inputArea = document.querySelector('#input-area-1');
 export const sendButton = document.querySelector('#send-button-1');
 
@@ -15,18 +17,6 @@ export function onSendButtonClick() {
     send(inputArea.value.trim());
 }
 
-// Отправка сообщения на вставку
-export function send(value) {
-    if (value.length <= 0)
-        return;
-
-    inputArea.value = '';
-
-    insertMessage('Вы', value); // добавляем сообщение в чат
-    const chat = document.querySelector('.messages-block');
-    chat.scrollTop = chat.scrollHeight; // сдвигаем прокрутку вниз
-}
-
 // Вставка сообщения с нужными параметрами на правильное место
 export function insertMessage(userName, message) {
     let point = document.querySelector('.messages-block');
@@ -39,11 +29,39 @@ export function insertMessage(userName, message) {
 
     if (userName !== 'Вы') {
         // если не посланное нами сообщение, то уберём лишний класс
-        template.querySelector('.messages-block').classList.remove('sent-message');
+        template.querySelector('.message').classList.remove('sent-message');
     }
     // добавим по месту вниз новое сообщение
     point.append(template);
 }
+
+export function refreshChat(history) {
+    let chat = document.querySelector('.messages-block');
+    chat.innerHTML = '';
+    for (let message in history) {
+        insertMessage(message.author, message.message);
+    }
+}
+
+// Отправка сообщения на вставку
+function send(message) {
+    if (message.length <= 0)
+        return;
+
+    inputArea.value = '';
+
+    addMessage('Вы', message); // добавляем сообщение в чат
+    const chat = document.querySelector('.messages-block');
+    chat.scrollTop = chat.scrollHeight; // сдвигаем прокрутку вниз
+}
+
+function addMessage(author, message) {
+    (histories[currentUserIndex])[histories[currentUserIndex].length] = { author, message };
+    insertMessage(author, message);
+
+    window.localStorage.setItem(`user-${currentUserIndex}`, JSON.stringify(history));
+}
+
 
 
 

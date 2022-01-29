@@ -5,8 +5,15 @@ window.onload = function () {
     chat.inputArea.addEventListener('input', chat.onInput);
     chat.sendButton.addEventListener('click', chat.onSendButtonClick);
     users.users.item(0).classList.add('active');
+    let historiesJson = [];
     for (let i = 0; i < users.users.length; i++) {
-        users.users.item(i).addEventListener('click', users.selectUser);
+        let user = users.users.item(i)
+        user.addEventListener('click', users.select);
+        historiesJson.push(window.localStorage.getItem(`user-${i}`));
+        let history = historiesJson[i];
+        if (history !== null)
+            users.loadHistory(i, JSON.parse(history, users.histories[i]));
+        if (window.localStorage.getItem('currentUser') === `user-${i}`)
+            users.selectUser(i);
     }
-
 };
