@@ -4,7 +4,7 @@ import * as users from "./modules/users.js";
 window.onload = function () {
     chat.inputArea.addEventListener('input', chat.onInput);
     chat.sendButton.addEventListener('click', chat.onSendButtonClick);
-    users.users.item(0).classList.add('active');
+    chat.clearChatButton.addEventListener('click', chat.onClearButtonClick);
     let historiesJson = [];
     for (let i = 0; i < users.users.length; i++) {
         let user = users.users.item(i)
@@ -12,10 +12,9 @@ window.onload = function () {
         historiesJson.push(window.localStorage.getItem(`user-${i}`));
         let history = historiesJson[i];
         if (history !== "{}" && history !== null)
-            users.loadHistory(i, JSON.parse(history, function(author, message) {
-                return {author, message};
-            }));
+            users.loadHistory(i, JSON.parse(history));
         if (window.localStorage.getItem('currentUser') === `user-${i}`)
             users.selectUser(i);
     }
+    chat.addMessage('Алексей Бураков', 'Попробуйте написать несколько сообщений!');
 };

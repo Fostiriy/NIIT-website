@@ -1,7 +1,8 @@
 import { histories, currentUserIndex } from "./users.js";
 
-export const inputArea = document.querySelector('#input-area-1');
-export const sendButton = document.querySelector('#send-button-1');
+export const inputArea = document.querySelector('#input-area');
+export const sendButton = document.querySelector('#send-button');
+export const clearChatButton = document.querySelector('#clear-button');
 
 // Обработка ввода текста до символа разделителя строки
 export function onInput(event) {
@@ -17,6 +18,12 @@ export function onSendButtonClick() {
     send(inputArea.value.trim());
 }
 
+export function onClearButtonClick() {
+    histories[currentUserIndex] = [];
+    localStorage.removeItem(`user-${currentUserIndex}`);
+    refreshChat(histories[currentUserIndex]);
+}
+
 // Вставка сообщения с нужными параметрами на правильное место
 export function insertMessage(userName, message) {
     let point = document.querySelector('.messages-block');
@@ -30,6 +37,7 @@ export function insertMessage(userName, message) {
     if (userName !== 'Вы') {
         // если не посланное нами сообщение, то уберём лишний класс
         template.querySelector('.message').classList.remove('sent-message');
+        template.querySelector('.message-wrapper').classList.remove('sent-message-wrapper');
     }
     // добавим по месту вниз новое сообщение
     point.append(template);
@@ -55,11 +63,12 @@ function send(message) {
     chat.scrollTop = chat.scrollHeight; // сдвигаем прокрутку вниз
 }
 
-function addMessage(author, message) {
+export function addMessage(author, message) {
     (histories[currentUserIndex])[histories[currentUserIndex].length] = { author, message };
     insertMessage(author, message);
 
-    window.localStorage.setItem(`user-${currentUserIndex}`, JSON.stringify(history));
+    window.localStorage.setItem(`user-${currentUserIndex}`, JSON.stringify(histories[currentUserIndex]));
+    console.log(JSON.stringify(histories[currentUserIndex]));
 }
 
 
