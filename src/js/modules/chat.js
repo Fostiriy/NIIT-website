@@ -28,19 +28,22 @@ export function send(value) {
 }
 
 // Вставка сообщения с нужными параметрами на правильное место
-export function insertMessage(user, message) {
+export function insertMessage(userName, message) {
     let point = document.querySelector('.messages-block');
     let template = document.getElementById('new-message').content.cloneNode(true); // нашли шаблон сообщения
     let time = new Date();
 
-    template.querySelector('.message-author').innerText = user;
-    template.querySelector('.message-time').innerText = time.getHours().toString() + ":" + time.getMinutes().toString();
+    template.querySelector('.message-author').innerText = userName;
+    template.querySelector('.message-time').innerText = ("00" + time.getHours()).slice(-2) + ":" + ("00" + time.getMinutes()).slice(-2);
     template.querySelector('.message-text').innerText = message;
 
-    if (user !== 'Вы') {
+    if (userName !== 'Вы') {
         // если не посланное нами сообщение, то уберём лишний класс
         template.querySelector('.messages-block').classList.remove('sent-message');
     }
     // добавим по месту вниз новое сообщение
     point.append(template);
 }
+
+
+

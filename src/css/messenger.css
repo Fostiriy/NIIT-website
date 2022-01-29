@@ -93,8 +93,6 @@
 }
 
 .input-area {
-    height: auto;
-    overflow-y: hidden;
     background: transparent;
     padding: 10px 15px;
     margin-right: 20px;
