@@ -82,6 +82,11 @@ body {
     margin: 10px;
 }
 
+.dropdown-nav-link:hover > .dropdown-list {
+    display: flex;
+    flex-direction: column;
+}
+
 .dropdown-list {
     display: none;
     position: absolute;
@@ -92,26 +97,21 @@ body {
     border-top: none;
 }
 
-.dropdown-nav-link:hover > .dropdown-list {
-    display: flex;
-    flex-direction: column;
+.main {
+    padding: 0 10px;
+    margin: 20px 0;
 }
 
 .title {
     font-family: var(--font-family-title);
     text-transform: uppercase;
-    font-size: 36px;
+    font-size: var(--font-size-title1);
     color: var(--select-color);
     margin: 20px 0 10px;
 }
 
-.team-list {
-    list-style: none;
-}
-
-.main {
-    padding: 0 10px;
-    margin: 20px 0;
+.title-mega {
+    font-size: var(--font-size-mega-title);
 }
 
 .footer {
@@ -139,4 +139,8 @@ body {
     color: var(--select-color);
     border: solid 2px var(--select-color);
     cursor: pointer;
+}
+
+abbr {
+    cursor: help;
 }

@@ -1,12 +1,13 @@
 .team-list {
     padding: 0;
+    list-style: none;
 }
 
 .youtube-block {
     display: flex;
     justify-content: center;
     overflow: hidden;
-    margin: 0 100px;
+    margin: 10px 100px;
     height: 400px;
     background: transparent;
     border: solid 5px var(--select-color);

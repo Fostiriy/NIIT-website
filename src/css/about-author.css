@@ -3,10 +3,6 @@
     align-items: center;
 }
 
-abbr {
-    cursor: help;
-}
-
 .avatar {
     width: 400px;
     margin-right: 50px;

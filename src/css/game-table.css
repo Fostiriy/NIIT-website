@@ -73,6 +73,7 @@
     justify-content: center;
 }
 
-.congratulation-block {
+.congratulation-block,
+#restart-game-button {
     display: none;
 }
