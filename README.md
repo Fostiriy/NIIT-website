@@ -10,7 +10,7 @@ This site consists of 7 pages and has the technology stack:
 * Package manager `pnpm`
 * Task runner `gulp` with plugins and module bundler `webpack`
 
-HOST: http://161.35.69.228/
+HOST: http://161.35.69.228:81
 
 # Installation
 1. Clone project from GitHub `https://github.com/Kokov1ch/FrontFinalProject`
